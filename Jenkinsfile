@@ -1,21 +1,7 @@
 properties([
     parameters([
 	    choice(name: 'MANIFEST', choices: ['develop'], description: 'Choose manifest for default image versions.'),
-        [ name: 'NAMESPACE',
-            description: 'NAMESPACE',
-            $class: 'ExtensibleChoiceParameterDefinition',
-            editable: false,
-            choiceListProvider: [
-                $class: 'FilenameChoiceListProvider',
-                baseDirPath: '/tmp',
-				includePattern: '*',
-				excludePattern: '',
-				scanType: 'Directory',
-				reverseOrder: false,
-				emptyChoiceType: 'AtTop',
-            ],
-        ],
-		[ name: 'TAG_FINMIGRATOR',
+  		[ name: 'MY_VALUE',
             description: 'TAG_FINMIGRATOR',
             $class: 'ExtensibleChoiceParameterDefinition',
             editable: false,
@@ -57,8 +43,9 @@ pipeline {
         stage('INIT Stage') {
             steps {
                 sh 'echo ##############################'
-                sh 'echo BRANCH_NAME is ${BRANCH_NAME}'
+                sh 'echo MY_VALUE is ${MY_VALUE}'
                 sh 'echo ##############################'
+
         }}
 
 
