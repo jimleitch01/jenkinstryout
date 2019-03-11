@@ -7,7 +7,7 @@ properties([
             editable: false,
             choiceListProvider: [
                 $class: 'FilenameChoiceListProvider',
-                baseDirPath: '/var/lib/jenkins/DROPDOWNS/namespaces',
+                baseDirPath: '/tmp',
 				includePattern: '*',
 				excludePattern: '',
 				scanType: 'Directory',
@@ -21,7 +21,7 @@ properties([
             editable: false,
             choiceListProvider: [
                 $class: 'FilenameChoiceListProvider',
-                baseDirPath: '/var/lib/jenkins/DROPDOWNS/apps/finmigrator',
+                baseDirPath: '/tmp',
 				includePattern: '*',
 				excludePattern: '',
 				scanType: 'Directory',
